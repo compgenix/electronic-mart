@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Deep Navy + Electric Orange e-commerce theme */
+    --background: 98 0.005 240;
+    --foreground: 18 0.05 254;
+
+    --card: 100 0 0;
+    --card-foreground: 18 0.05 254;
+
+    --popover: 100 0 0;
+    --popover-foreground: 18 0.05 254;
+
+    /* Navy blue primary */
+    --primary: 22 0.07 254;
+    --primary-foreground: 98 0 0;
+
+    /* Light secondary */
+    --secondary: 93 0.01 250;
+    --secondary-foreground: 18 0.05 254;
+
+    --muted: 93 0.01 250;
+    --muted-foreground: 50 0.02 250;
+
+    /* Electric orange accent */
+    --accent: 65 0.22 46;
+    --accent-foreground: 100 0 0;
+
+    --destructive: 55 0.22 25;
+    --destructive-foreground: 100 0 0;
+
+    --border: 88 0.01 250;
+    --input: 88 0.01 250;
+    --ring: 22 0.07 254;
+
+    --radius: 0.5rem;
+
+    --chart-1: 65 0.22 46;
+    --chart-2: 55 0.18 200;
+    --chart-3: 60 0.15 150;
+    --chart-4: 70 0.12 300;
+    --chart-5: 65 0.2 25;
+
+    --sidebar: 100 0 0;
+    --sidebar-foreground: 18 0.05 254;
+    --sidebar-primary: 22 0.07 254;
+    --sidebar-primary-foreground: 98 0 0;
+    --sidebar-accent: 93 0.01 250;
+    --sidebar-accent-foreground: 18 0.05 254;
+    --sidebar-border: 88 0.01 250;
+    --sidebar-ring: 22 0.07 254;
+
+    /* Custom brand tokens */
+    --brand-navy: 18 0.07 254;
+    --brand-orange: 65 0.22 46;
+    --brand-orange-light: 75 0.18 46;
+    --brand-navy-light: 30 0.06 254;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .brand-gradient {
+    background: linear-gradient(135deg, oklch(18 0.07 254), oklch(28 0.1 254));
+  }
+
+  .orange-gradient {
+    background: linear-gradient(135deg, oklch(65 0.22 46), oklch(72 0.18 55));
+  }
+
+  .hero-gradient {
+    background: linear-gradient(
+      160deg,
+      oklch(14 0.08 260) 0%,
+      oklch(22 0.09 248) 50%,
+      oklch(18 0.12 230) 100%
+    );
+  }
+
+  .product-card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .badge-discount {
+    @apply bg-accent text-accent-foreground text-xs font-bold px-2 py-0.5 rounded;
+  }
+
+  .star-filled {
+    color: oklch(78 0.18 80);
+  }
+
+  .star-empty {
+    color: oklch(80 0.02 250);
+  }
+}
+
+@layer utilities {
+  .text-brand-navy {
+    color: oklch(var(--brand-navy));
+  }
+  .text-brand-orange {
+    color: oklch(var(--brand-orange));
+  }
+  .bg-brand-navy {
+    background-color: oklch(var(--brand-navy));
+  }
+  .bg-brand-orange {
+    background-color: oklch(var(--brand-orange));
+  }
+  .border-brand-orange {
+    border-color: oklch(var(--brand-orange));
+  }
+}
